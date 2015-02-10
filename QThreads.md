@@ -6,10 +6,12 @@ the child instance of a QObject must always be created in the thread where the p
 QThread class
 =====================
 a QThread object is not a thread, is only managing a thread. The only method on QThread that runs on a separate thread is QThread::run().
-subclassing QThread: 
-if one needs an eventloop + signals/slots inside a thread, create a Worker class and move a worker instance to a plain QThread instance, calling worker.moveToThread(t). No need to override QThread::run().
-if one does not need an eventloop (e.g just needs some plain blocking calls) inside the thread, override QThread::run().
-the slots of a QThread subclass are called in the thread where the QThread instance lives: typically the parent thread!
+
+##### Subclassing QThread: 
+* if one needs an eventloop + signals/slots inside a thread, create a Worker class and move a worker instance to a plain QThread instance, calling worker.moveToThread(t). No need to override QThread::run().
+* if one does not need an eventloop (e.g just needs some plain blocking calls) inside the thread, override QThread::run().
+
+The slots of a QThread subclass are called in the thread where the QThread instance lives: typically the parent thread!
 
 Using threads inside Qt
 =====================
