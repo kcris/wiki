@@ -19,11 +19,11 @@ The slots of a QThread subclass are called in the thread where the QThread insta
 
 Using threads inside Qt
 =====================
-only the main thread can access GUI elements (QWidgets). Use signals/slots/events to communicate with the gui.
-event driven objects may only be used in a single thread. Specifically, this applies to the QTimer mechanism and the QtNetwork module. For example, you cannot start a timer or connect a socket in a thread that is not the object's thread.
-an SQL connection can only be used from within the thread that created it. Moving connections between threads or creating queries from a different thread is not supported.
-event filters and sendEvent() only work in the thread where target QObject instance lives; postEvent() does work across threads.
-since Qt 4.8, if deleteLater() is called on an object that lives in a thread with no running event loop, the object will be destroyed when the thread finishes, see QObject::deleteLater().
+* only the main thread can access GUI elements (QWidgets). Use signals/slots/events to communicate with the gui.
+* event driven objects may only be used in a single thread. Specifically, this applies to the QTimer mechanism and the QtNetwork module. For example, you cannot start a timer or connect a socket in a thread that is not the object's thread.
+* an SQL connection can only be used from within the thread that created it. Moving connections between threads or creating queries from a different thread is not supported.
+* event filters and sendEvent() only work in the thread where target QObject instance lives; postEvent() does work across threads.
 
+Since Qt 4.8, if deleteLater() is called on an object that lives in a thread with no running event loop, the object will be destroyed when the thread finishes, see QObject::deleteLater().
 
 See wiki summary: http://qt-project.org/wiki/ThreadsEventsQObjects
