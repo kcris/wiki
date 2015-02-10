@@ -4,4 +4,7 @@
 
 ##### Collections
 * [hackershelf](http://hackershelf.com/browse/)
+ 
+##### C++
+* [Addison Wesley - C++ In Depth Series](https://www.informit.com/imprint/series_detail.aspx?ser=334643)
 
