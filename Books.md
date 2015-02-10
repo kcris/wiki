@@ -3,5 +3,5 @@
 * [architecture of opensource applications](http://aosabook.org/en/index.html)
 
 ##### Collections
-* [hackershelf collection](http://hackershelf.com/browse/)
+* [hackershelf](http://hackershelf.com/browse/)
 
