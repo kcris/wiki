@@ -25,4 +25,4 @@ Using threads inside Qt
 * event filters and `sendEvent()` only work in the thread where target `QObject` instance lives; `postEvent()` does work across threads.
 * Since Qt 4.8, if `deleteLater()` is called on an object that lives in a thread with no running event loop, the object will be destroyed when the thread finishes, see `QObject::deleteLater()`.
 
-See wiki summary [here]: http://qt-project.org/wiki/ThreadsEventsQObjects
+See wiki summary [here](http://qt-project.org/wiki/ThreadsEventsQObjects)
