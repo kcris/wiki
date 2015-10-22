@@ -2,7 +2,7 @@ QObject and threads
 =====================
 Each `QObject` instance 'belongs' to a thread: that thread is the one that runs the eventloop for that instance = the eventloop where slots of that instance are executed. (as a consequence, using the instance on a different thread requires locking). This is called thread affinity  (or thread context). It's by default the thread where the `QObject` instance is created. 
 
-A `QObject` instance without a parent (!) can be moved to a different thread by calling `moveToThread()`.
+A `QObject` instance without a parent (!) can be 'moved' to a different thread by calling `moveToThread()`.
 
 The child instance of a `QObject` must always be created in the thread where the parent instance was created. 
 
@@ -10,7 +10,7 @@ So never pass the `QThread` instance (`this`) as the parent of an object created
 
 QThread class
 =====================
-a `QThread` object **is not a thread, is only managing a thread**. The only method on `QThread` that runs on a separate thread is `QThread::run()`.
+A `QThread` object **is not a thread, is only managing a thread**. The only method on `QThread` that runs on a separate thread is `QThread::run()`.
 
 ##### Subclassing QThread: 
 * if one needs an eventloop + signals/slots inside a thread, create a `Worker` class and move a worker instance to a plain `QThread` instance, calling `worker.moveToThread(t)`. No need to override `QThread::run()`.
