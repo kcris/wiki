@@ -3,9 +3,10 @@ QObject and threads
 Each `QObject` instance 'belongs' to a thread: that thread is the one that runs the eventloop for that instance = the eventloop where slots of that instance are executed. (as a consequence, using the instance on a different thread requires locking). This is called thread affinity  (or thread context). It's by default the thread where the `QObject` instance is created. 
 
 A `QObject` instance without a parent (!) can be moved to a different thread by calling `moveToThread()`.
-the child instance of a `QObject` must always be created in the thread where the parent instance was created. 
 
-Never pass the `QThread` instance (`this`) as the parent of an object created in the thread's `run()` method since the `QThread` instance itself was created in another thread. Parent instance has child ownership and destroy is only thread-safe if both parent and child instances have same the thread affinity, no risk of eventloop interfering.
+The child instance of a `QObject` must always be created in the thread where the parent instance was created. 
+
+So never pass the `QThread` instance (`this`) as the parent of an object created in the thread's `run()` method since the `QThread` instance itself was created in another thread. Parent instance has child ownership and destroy is only thread-safe if both parent and child instances have same the thread affinity, no risk of eventloop interfering.
 
 QThread class
 =====================
