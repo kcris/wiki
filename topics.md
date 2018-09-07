@@ -31,3 +31,15 @@
 * c++
   * https://www.informit.com/imprint/series_detail.aspx?ser=334643
   
+* scala
+  * linearization, mixins, type ascription, context bounds
+  
+* concepts
+  * type erasure, reflection, annotations, reifications
+  * generics, covariance/contravariance
+  * crtp, double locking
+  * monads, closure, continuation, lambda, currying, partial applications
+  * pattern matching, algebraic data types, memoization, homoiconic
+  * actor model
+  * software transactional memory
+  
